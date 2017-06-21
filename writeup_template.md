@@ -23,10 +23,10 @@ The goals / steps of this project are the following:
 [image2]: ./image_output/sample_normalization.jpg "Grayscaling"
 [image3]: ./image_output/training_set_initial_sample_distribution.jpg "Initial_distribution"
 [image4]: ./new_images/example_00005.jpg "Traffic Sign 1"
-[image5]: ./new_images/example_00019.png "Traffic Sign 2"
-[image6]: ./new_images/example_00021.png "Traffic Sign 3"
-[image7]: ./new_images/example_00032.png "Traffic Sign 4"
-[image8]: ./new_images/example_00034.png "Traffic Sign 5"
+[image5]: ./new_images/example_00019.jpg "Traffic Sign 2"
+[image6]: ./new_images/example_00021.jpg "Traffic Sign 3"
+[image7]: ./new_images/example_00032.jpg "Traffic Sign 4"
+[image8]: ./new_images/example_00034.jpg "Traffic Sign 5"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -53,9 +53,12 @@ signs data set:
 
 ####2. Include an exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the data set.
+* Sample Distribution of Training Dataset
 
 ![alt text][image1]
+
+* Sample Distribution
 
 ###Design and Test a Model Architecture
 
