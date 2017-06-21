@@ -28,6 +28,7 @@ The goals / steps of this project are the following:
 [image7]: ./new_images/example_00032.jpg "Traffic Sign 4"
 [image8]: ./new_images/example_00034.jpg "Traffic Sign 5"
 [image9]: ./image_output/image_aug_sample.jpg "Augmented Images"
+[image10]: ./image_output/augmented_distribution.jpg "Augmented Sample Distribution"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -89,7 +90,9 @@ Here is an example of an original image and an augmented image for each class th
 
 ![alt text][image9]
 
-As a result of data augmentation, the training data set is increase by 32581 images, which almost double the amount of data avaiable.
+As a result of data augmentation, the training data set is increase by 32581 images, which almost double the amount of data avaiable.  
+New sampel distribution looks like this.  
+![alt text][image10]
 
 
 ####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -98,15 +101,22 @@ My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Input         		| 32x32x1 Grayscale image   							| 
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x40 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Max pooling	      	| 2x2 stride, valid padding, outputs 14x14x64 				|
+| Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x64      									|
+| RELU					|		
+| Max pooling	      	| 2x2 stride, valid padding, outputs 5x5x64 				|
+| Flatten	      	| outputs 1600 				|
+| Fully connected		| outputs 1024       									|
+| RELU					|
+| Dropout		| Keep Probability 0.5      									|
+| Fully connected		| outputs 512       									|
+| RELU					|	
+| Dropout		| Keep Probability 0.5      									|
+| Fully connected		| outputs 43       									|
+| Softmax				|         									|
  
 
 
