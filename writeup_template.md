@@ -26,7 +26,7 @@
 [image9]: ./image_output/image_aug_sample.jpg "Augmented Images"
 [image10]: ./image_output/augmented_distribution.jpg "Augmented Sample Distribution"
 [image11]: ./image_output/signs_from_web.jpg "Signs from Web"
-
+[image12]: ./image_output/top_5.jpg "Top 5 Predictions"
 
 ---
 ### Writeup / README
@@ -166,31 +166,22 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| No Entry      		| No Entry   									| 
+| Keep Right     			| Keep Right 										|
+| Right of Way at Next Intersection					| Right of Way at Next Intersection											|
+| Roundabout Mandatory	      		| No Vehicles					 				|
+| Road Narrows on the Right			| Road Narrows on the Right      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This is a good result considering that these images are chosen to delibrately confuse the network.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+Here is a graph showing how confident the model is at predicting each sign.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+![alt text][image12]
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
+It can be seen that for 4 out of 5 signs, the network is almost certain that it predicts them correctly. For the fourth sign, "Roundabout Mandatory", the model mixes that with a few other signs. However, judging by the sign that it predict, the networks recognizes the round shape in the sign. 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 ####1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
